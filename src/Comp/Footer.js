@@ -28,17 +28,17 @@ const Footer = (props) => {
             <ul className="list-unstyled mb-0 ">
               <li className="mb-2 mx-5">
                 <a href="https://www.facebook.com/majharulislam.tahrim.9/">
-                <i class="fa-brands fa-facebook-f fa-xl"></i>
+                <i className="fa-brands fa-facebook-f fa-xl"></i>
                 </a>
               </li>
               <li className='mx-5 mb-2 my 2'>
                 <a href="https://github.com/tahrimm">
-                <i class="fa-brands fa-github fa-xl"></i>
+                <i className="fa-brands fa-github fa-xl"></i>
                 </a>
               </li>
               <li className='mx-5 mb-2 my 2'>
                 <a href="https://www.linkedin.com/in/majharul-islam-698964262/">
-                <i class="fa-brands fa-linkedin fa-xl"></i>
+                <i className="fa-brands fa-linkedin fa-xl"></i>
                 </a>
               </li>
             </ul>

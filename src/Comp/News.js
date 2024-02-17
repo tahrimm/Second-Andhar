@@ -8,13 +8,13 @@ function News(props) {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [totalResults, setTotalResults] = useState(0);
-
+const apikey = process.env.REACT_APP_NEWS_API_KEY;
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
   const updateNews = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=78fa08ed83ee4e4ebb2f64b3753fa07d&page=${page}&pageSize=${props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=${apikey}&page=${page}&pageSize=${props.pageSize}`;
     setLoading(true);
     let data = await fetch(url);
     let parsedata = await data.json();
@@ -24,7 +24,7 @@ function News(props) {
   };
 
   useEffect(() => {
-    document.title = `${capitalizeFirstLetter(props.category)} | Second Adhar`;
+    document.title = `${capitalizeFirstLetter(props.category)}`;
     updateNews();
   }, [props.category, page]);
   
@@ -43,9 +43,9 @@ function News(props) {
 
       <div className="row">
         {!loading &&
-          articles.map((element) => {
+          articles.map((element, index) => {
             return (
-              <div className="col-md-4">
+              <div key={index} className="col-md-4">
                 <NewsItesms
                   key={element.urlToImage}
                   imgurl={element.urlToImage}
